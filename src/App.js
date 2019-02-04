@@ -15,7 +15,7 @@ class App extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const orders = [];
     querySnapshot.forEach((doc) => {
-      const { userName, itemName, orderDate, hasModifiers, category, favoureties, paymentDetails, isPaid, modifiers } = doc.data();
+      const { userName, itemName, orderDate, hasModifiers, category, favourities, paymentDetails, isPaid, modifiers } = doc.data();
       orders.push({
         key: doc.id,
         doc, // DocumentSnapshot
@@ -24,7 +24,7 @@ class App extends Component {
         orderDate,
         hasModifiers,
         category,
-        favoureties,
+        favourities,
         paymentDetails,
         isPaid,
         modifiers
@@ -71,7 +71,7 @@ class App extends Component {
                     <td>{order.orderDate}</td>
                     <td>{(order.hasModifiers)?'yes':'no'}</td>
                     <td>{order.category}</td>
-                    <td>{order.favoureties[0].itemName}</td>
+                    <td>{order.favourities[0].itemName}</td>
                     <td>{order.paymentDetails[0].price}</td>
                     <td>{(order.isPaid)?'yes':'no'}</td>
                     <td>{order.modifiers[0].name}</td>
